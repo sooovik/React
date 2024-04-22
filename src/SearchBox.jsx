@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import "./SearchBox.css";
@@ -14,6 +15,15 @@ export default function SearchBox() {
     );
     let jsonResponse = await response.json();
     console.log(jsonResponse);
+    let result = {
+      temp: jsonResponse.main.temp,
+      tempMin: jsonResponse.main.temp_min,
+      tempMax: jsonResponse.main.temp_max,
+      humidity: jsonResponse.main.humidity,
+      feelsLike: jsonResponse.main.feels_Like,
+      weather: jsonResponse.weather[0].description,
+    };
+    console.log(result);
   };
 
   let handleChange = (evt) => {

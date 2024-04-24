@@ -13,6 +13,14 @@ export default function WeatherApp() {
     weather: "haze",
   });
 
+  const style = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+    width: "100vw",
+  };
+
   let updateInfo = (newInfo) => {
     setWeatherInfo(newInfo);
   };
